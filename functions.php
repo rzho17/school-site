@@ -69,3 +69,6 @@ function school_add_custom_image_sizes( $size_names ) {
 	return array_merge( $size_names, $new_sizes );
 }
 add_filter( 'image_size_names_choose', 'school_add_custom_image_sizes' );
+require get_theme_file_path() . '/inc/post-type-taxonomies.php';
+
+
