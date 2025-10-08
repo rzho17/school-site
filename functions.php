@@ -69,6 +69,18 @@ function school_add_custom_image_sizes( $size_names ) {
 	return array_merge( $size_names, $new_sizes );
 }
 add_filter( 'image_size_names_choose', 'school_add_custom_image_sizes' );
+
+
 require get_theme_file_path() . '/inc/post-type-taxonomies.php';
 
+// changes student post add title
+function school_site_student_title_placeholder( $title ) {
+    $screen = get_current_screen();
 
+    if ( 'fwd-student' === $screen->post_type ) {
+        $title = 'Add Student';
+    }
+
+    return $title;
+}
+add_filter( 'enter_title_here', 'school_site_student_title_placeholder' );
