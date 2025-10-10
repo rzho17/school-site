@@ -59,12 +59,15 @@ function school_site_setup(){
     add_editor_style(get_stylesheet_uri());
      add_image_size('300x200', 300, 200, true);
     add_image_size('800x400', 800, 400, true);
+    add_image_size('316x316', 316, 316, true);
+
 }
 add_action( 'after_setup_theme', 'school_site_setup' );
 function school_add_custom_image_sizes( $size_names ) {
 	$new_sizes = array(
 		'300x200' => __( '300x200', 'school-site' ),
 		'800x400' => __( '800x400', 'school-site' ),
+        '316x316' => __( '316x316', 'school-site' ),
 	);
 	return array_merge( $size_names, $new_sizes );
 }
@@ -72,7 +75,7 @@ add_filter( 'image_size_names_choose', 'school_add_custom_image_sizes' );
 
 
 require get_theme_file_path() . '/inc/post-type-taxonomies.php';
-
+require get_theme_file_path() . '/school-site-blocks/school-site-blocks.php';
 // changes student post add title
 function school_site_student_title_placeholder( $title ) {
     $screen = get_current_screen();

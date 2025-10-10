@@ -37,24 +37,44 @@ function school_site_register_custom_post_types() {
         'item_link_description'    => __( 'A link to a staff.', 'school-site' ),
     );
 
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_nav_menus'  => true,
-        'show_in_admin_bar'  => true,
-        'show_in_rest'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'staffs' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-products',
-        'supports'           => array( 'title', 'editor', 'thumbnail' ),
-    );
+   $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'show_in_nav_menus'  => true,
+    'show_in_admin_bar'  => true,
+    'show_in_rest'       => true,
+    'query_var'          => true,
+    'rewrite'            => array( 'slug' => 'staffs' ),
+    'capability_type'    => 'post',
+    'has_archive'        => true,
+    'hierarchical'       => false,
+    'menu_position'      => 5,
+    'menu_icon'          => 'dashicons-products',
+    'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    'template' => array(
+        array(
+            'core/paragraph',
+            array(
+                'placeholder' => 'Enter Job Title',
+                'lock' => array(
+                    'move' => true,
+                    'remove' => true
+                )
+            )
+        ),
+        array(
+            'staff-email/staff-email',
+            array(
+                'svgIcon' => true,
+            )
+        )
+    ),
+   
+);
+
     register_post_type( 'fwd-staff', $args );
 
     $labels = array(
@@ -172,11 +192,11 @@ function school_site_register_taxonomies() {
             'show_admin_column' => true,
             'query_var'         => true,
             'rewrite'           => array( 'slug' => 'staff-categories' ),
-             'capabilities'      => array(
-            'manage_terms' => 'do_not_allow', 
-            'edit_terms'   => 'do_not_allow', 
-            'delete_terms' => 'do_not_allow', 
-            'assign_terms' => 'edit_posts',),
+        //      'capabilities'      => array(
+        //     'manage_terms' => 'do_not_allow', 
+        //     'edit_terms'   => 'do_not_allow', 
+        //     'delete_terms' => 'do_not_allow', 
+        //     'assign_terms' => 'edit_posts',),
         );
         register_taxonomy( 'fwd-staff-category', array( 'fwd-staff' ), $args );
 
