@@ -110,7 +110,6 @@ function school_site_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-groups',
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
-        'template_lock'      => 'insert',
         'template'           => array(
             array(
                 'core/paragraph',

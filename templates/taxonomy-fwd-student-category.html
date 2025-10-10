@@ -1,0 +1,19 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group"><!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+
+<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"fwd-student","order":"desc","orderBy":"post__in","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[],"format":[],"meta_query":[],"tax_query":{"relation":"OR","queries":[{"id":"93e74bfc-d054-4078-ba42-c68782e86f82","taxonomy":"fwd-student-category","terms":["Designer","Developer"],"include_children":true,"operator":"IN"}]},"exclude_current":0,"include_posts":[],"post_parent":0,"disable_pagination":false,"multiple_posts":[]},"namespace":"advanced-query-loop","layout":{"contentSize":null,"type":"constrained"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:post-title {"isLink":true} /-->
+
+<!-- wp:post-featured-image {"isLink":true,"sizeSlug":"400x600"} /-->
+
+<!-- wp:post-terms {"term":"fwd-student-category","prefix":"Specialty: "} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

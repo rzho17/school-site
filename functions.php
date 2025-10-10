@@ -57,13 +57,15 @@ function school_site_setup(){
     add_theme_support( 'post-thumbnails' );
     //load styles at back end
     add_editor_style(get_stylesheet_uri());
-     add_image_size('300x200', 300, 200, true);
+    add_image_size('300x200', 300, 200, true);
+    add_image_size('400x600', 400, 600, true);
     add_image_size('800x400', 800, 400, true);
 }
 add_action( 'after_setup_theme', 'school_site_setup' );
 function school_add_custom_image_sizes( $size_names ) {
 	$new_sizes = array(
 		'300x200' => __( '300x200', 'school-site' ),
+		'400x600' => __( '400x600', 'school-site' ),
 		'800x400' => __( '800x400', 'school-site' ),
 	);
 	return array_merge( $size_names, $new_sizes );
