@@ -14,39 +14,79 @@ Text Domain: school-site
 Tags: 
 Update URI: false
 */
-.staff-category img{
+/* styles for staff custom post   */
+.staff-category img {
     border-radius: 50%;
     object-fit: cover;
 }
-.staff-grid{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap:24px;
-     position:relative;
-     z-index:100;
-}
 
- .staff-contanier{
-    display:flex;
+
+.staff-contanier {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#013566;
-    padding:20px;
-    color:#ffffff;
+    background-color: #013566;
+    padding: 20px;
+    color: #ffffff;
     /* box-shadow: 10px 10px 0 #71013c; */
-  position:relative;
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.staff-contanier::after{
+.staff-contanier::after {
     content: "";
     position: absolute;
-    top:10px; 
-     left : 10px;
-    right:-5px;
-    bottom:-5px;
+    top: 10px;
+    left: 10px;
+    right: -5px;
+    bottom: -5px;
     border: 2px solid #71013c;
-    z-index:-1;
-} 
-h2{
+    z-index: -1;
+}
+
+h2 {
     text-align: center;
+}
+
+.staff-photo img {
+    width: 216px;
+    height: 216px;
+}
+
+.staff-member h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.staff-member p {
+    margin: 0;
+    padding: 0;
+}
+
+.staff-member a {
+    color: #ffffff;
+}
+
+@media (min-width: 22.75rem) {
+    .staff-photo img {
+        width: 271px;
+        height: 271px;
+    }
+}
+
+@media (min-width: 26.5625rem) {
+    .staff-photo img {
+        width: 321px;
+        height: 321px;
+    }
+}
+
+@media (min-width: 38.4375rem) {
+    .staff-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        position: relative;
+        z-index: 100;
+    }
 }
