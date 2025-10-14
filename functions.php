@@ -62,6 +62,7 @@ function school_site_enqueues()
         '2.3.1',
         true
     );
+    
      // Enqueue custom script to initialize AOS and set options
     wp_enqueue_script(
         'aos-init',
