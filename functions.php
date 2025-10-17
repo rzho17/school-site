@@ -45,35 +45,37 @@ function school_site_enqueues()
             array('strategy' => 'defer')
         );
     }
-    // enqueue aos files--------------------------------------------------
-     // Enqueue AOS CSS from CDN
+  // Enqueue AOS CSS from CDN
     wp_enqueue_style(
         'aos-css',
-        'https://unpkg.com/aos@2.3.1/dist/aos.css',
+        'https://unpkg.com/aos@2.3.4/dist/aos.css',
         array(),
-        '2.3.1',
-        'all'
+        '2.3.4'
     );
-    // Enqueue AOS javascript from CDN
-     wp_enqueue_script(
+
+    // Enqueue AOS JS from CDN
+    wp_enqueue_script(
         'aos-js',
-        'https://unpkg.com/aos@2.3.1/dist/aos.js',
+        'https://unpkg.com/aos@2.3.4/dist/aos.js',
         array(),
-        '2.3.1',
+        '2.3.4',
+        true // Load in footer
+    );
+
+    // Enqueue custom script to initialize AOS
+    wp_enqueue_script(
+        'fwd-blocks-aos-init',
+        get_template_directory_uri() . '/js/aos-init.js',
+        array( 'aos-js' ),
+        '1.0.0',
         true
     );
-    
-     // Enqueue custom script to initialize AOS and set options
-    wp_enqueue_script(
-        'aos-init',
-        get_template_directory_uri() . '/js/aos-init.js', 
-        array('aos-js'), // Dependency: aos-js must be loaded first
-        '1.0.0',
-        true 
-    );    
+   
 }
 
 add_action('wp_enqueue_scripts', 'school_site_enqueues');
+
+
 // add styles to the back-end-editor
 
 
@@ -103,6 +105,7 @@ add_filter('image_size_names_choose', 'school_add_custom_image_sizes');
 
 require get_theme_file_path() . '/inc/post-type-taxonomies.php';
 require get_theme_file_path() . '/school-site-blocks/school-site-blocks.php';
+require get_theme_file_path() . '/aos-block/aos-wrapper.php';
 // changes student post add title
 function school_site_student_title_placeholder($title)
 {

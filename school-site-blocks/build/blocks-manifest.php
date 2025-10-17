@@ -19,31 +19,5 @@ return array(
 		'textdomain' => 'staff',
 		'editorScript' => 'file:./index.js',
 		'style' => 'file:./style-index.css'
-	),
-	'staff-email' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'staff-email/staff-email',
-		'version' => '1.1.0',
-		'title' => 'Staff email',
-		'category' => 'text',
-		'icon' => 'email',
-		'description' => 'staff email',
-		'example' => array(
-			
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'attributes' => array(
-			'svgIcon' => array(
-				'type' => 'boolean',
-				'default' => false
-			)
-		),
-		'textdomain' => 'staff-email',
-		'editorScript' => 'file:./index.js',
-		'style' => 'file:./style-index.css',
-		'render' => 'file:./render.php'
 	)
 );
