@@ -1,7 +1,7 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group"><!-- wp:columns {"verticalAlignment":null} -->
+<main class="wp-block-group"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:post-featured-image {"width":"","height":"600px"} /--></div>
 <!-- /wp:column -->
@@ -13,7 +13,13 @@
 <!-- wp:post-content {"style":{"typography":{"lineHeight":1.6}}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns --></main>
+<!-- /wp:columns -->
+
+<!-- wp:buttons {"metadata":{"categories":["Buttons"],"patternName":"school-site/see-more","name":"See More Button"},"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"textAlign":"center","backgroundColor":"accent","textColor":"base","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-accent-background-color has-text-color has-background has-link-color has-text-align-center wp-element-button" href="http://localhost:8888/school-site/apply-now/" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--40)">Apply Now</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
